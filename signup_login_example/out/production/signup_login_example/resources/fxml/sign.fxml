@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXSpinner?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="mainPane" prefHeight="569.0" prefWidth="591.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.SignController">
+   <children>
+      <StackPane layoutX="155.0" layoutY="125.0" prefHeight="150.0" prefWidth="200.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+         <children>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #f34a5aff;" HBox.hgrow="ALWAYS" />
+                  <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: white;" HBox.hgrow="ALWAYS" />
+               </children>
+            </HBox>
+            <VBox alignment="CENTER" focusTraversable="true" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="387.0" prefWidth="304.0" style="-fx-background-color: #ed2765ff;">
+               <StackPane.margin>
+                  <Insets bottom="50.0" left="60.0" right="60.0" top="50.0" />
+               </StackPane.margin>
+               <children>
+                  <Label prefHeight="28.0" prefWidth="159.0" text="Sign In" textFill="WHITE">
+                     <VBox.margin>
+                        <Insets bottom="20.0" left="90.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font name="Bookman Old Style" size="26.0" />
+                     </font>
+                  </Label>
+                  <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="37.0" prefWidth="200.0" style="-fx-background-color: white; -fx-background-radius: 50;">
+                     <children>
+                        <ImageView fitHeight="24.0" fitWidth="23.0">
+                           <image>
+                              <Image url="@../images/icons8_customer_50px_6.png" />
+                           </image>
+                        </ImageView>
+                        <TextField fx:id="fName" onKeyReleased="#setKeyRelease" promptText="Enter First Name" style="-fx-background-color: transparent;" />
+                     </children>
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="37.0" prefWidth="200.0" style="-fx-background-color: white; -fx-background-radius: 50;">
+                     <children>
+                        <ImageView fitHeight="24.0" fitWidth="23.0">
+                           <image>
+                              <Image url="@../images/icons8_customer_50px_6.png" />
+                           </image>
+                        </ImageView>
+                        <TextField fx:id="lName" onKeyReleased="#setKeyRelease" promptText="Enter Last Name" style="-fx-background-color: transparent;" />
+                     </children>
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="37.0" prefWidth="200.0" style="-fx-background-color: white; -fx-background-radius: 50;">
+                     <children>
+                        <ImageView fitHeight="24.0" fitWidth="23.0">
+                           <image>
+                              <Image url="@../images/icons8_email_24px.png" />
+                           </image>
+                        </ImageView>
+                        <TextField fx:id="emailfield" onKeyReleased="#setKeyRelease" promptText="Enter Email" style="-fx-background-color: transparent;" />
+                     </children>
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="37.0" prefWidth="200.0" style="-fx-background-color: white; -fx-background-radius: 50;">
+                     <children>
+                        <ImageView>
+                           <image>
+                              <Image url="@../images/lock.png" />
+                           </image>
+                        </ImageView>
+                        <PasswordField fx:id="passwordField" onKeyReleased="#setKeyRelease" promptText="Enter Password" style="-fx-background-color: transparent;">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </PasswordField>
+                     </children>
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <Label fx:id="logError" textFill="WHITE">
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <JFXButton fx:id="btn_signin" buttonType="RAISED" onAction="#sign_in" prefHeight="38.0" prefWidth="178.0" ripplerFill="#e81a7d" style="-fx-background-color: #e15e87ff;" text="Signin" textFill="WHITE">
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                  </JFXButton>
+                  <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="23.0" prefWidth="290.0">
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                     <children>
+                        <JFXButton fx:id="btn_login" layoutX="238.0" layoutY="33.0" onAction="#log" style="-fx-background-color: transparent;" text="Login" textFill="WHITE" />
+                        <Label layoutX="109.0" layoutY="37.0" text="Already have account ?" textFill="WHITE" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </VBox>
+            <HBox fx:id="loading" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" opacity="0.7" prefHeight="73.0" prefWidth="200.0" style="-fx-background-color: #e15e87ff;" visible="false">
+               <StackPane.margin>
+                  <Insets top="-30.0" />
+               </StackPane.margin>
+               <children>
+                  <JFXSpinner>
+                     <HBox.margin>
+                        <Insets left="-10.0" />
+                     </HBox.margin>
+                  </JFXSpinner>
+                  <Label text="Loading ..." textFill="#0d0a0a">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="20.0" />
+                     </HBox.margin>
+                  </Label>
+               </children>
+            </HBox>
+         </children>
+         <effect>
+            <DropShadow />
+         </effect>
+      </StackPane>
+   </children>
+</AnchorPane>
